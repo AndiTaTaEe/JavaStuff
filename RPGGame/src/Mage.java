@@ -6,6 +6,8 @@ public class Mage extends Character{
         super(name, health, attackPower);
     }
 
+
+
     @Override
     public void attack(Character altCharacter) {
         System.out.println(this.name + " casts a fireball at " + altCharacter.name + "!");
@@ -22,7 +24,7 @@ public class Mage extends Character{
         altCharacter.health -= actualDamage;
 
         //outcome
-        System.out.println(altCharacter.name + " takes " + this.attackPower + " damage! Remaining HP: " + Math.max(0,altCharacter.health));
+        System.out.println(altCharacter.name + " takes " + actualDamage + " damage! Remaining HP: " + Math.max(0,altCharacter.health));
         System.out.println("-------------------");
     }
 }

@@ -9,6 +9,7 @@ public class Warrior extends Character{
         super(name,health,attackPower);
     }
 
+
     @Override
     public void attack(Character altCharacter) {
         System.out.println(this.name + " swings a might sword at " + altCharacter.name);

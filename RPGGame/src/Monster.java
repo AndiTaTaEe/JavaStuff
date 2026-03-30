@@ -11,11 +11,13 @@ public class Monster extends Character{
     }
 
     //overriding the setter to keep maxHealth accurate if method chaining used
+
     public Monster setHealth(int health){
         super.setHealth(health);
         this.maxHealth = health;
         return this;
     }
+
 
     @Override
     public void attack(Character altCharacter) {
@@ -23,7 +25,7 @@ public class Monster extends Character{
         int actualDamage = this.attackPower;
         //calculating the 30% threshold
         double rageThreshold = this.maxHealth * 0.30;
-        if (this.maxHealth > 0 && this.maxHealth < rageThreshold){
+        if (this.health > 0 && this.health < rageThreshold){
             System.out.println("ENRAGED! " + this.name + " attacks with reckless fury!");
 
             //when enraged, increase damage by 1.5
@@ -32,7 +34,7 @@ public class Monster extends Character{
 
         altCharacter.health-=actualDamage;
 
-        System.out.println(altCharacter.name + " takes " + this.attackPower + " damage! Remaining HP: " + Math.max(0,altCharacter.health));
+        System.out.println(altCharacter.name + " takes " + actualDamage + " damage! Remaining HP: " + Math.max(0,altCharacter.health));
         System.out.println("-------------------");
 
     }
